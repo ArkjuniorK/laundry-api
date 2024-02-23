@@ -1,0 +1,465 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "API Docs",
+        "version": "1.0.0",
+        "description": ""
+    },
+    "servers": [
+        {
+            "description": "Local",
+            "url": "http://localhost:8080/api/v1"
+        }
+    ],
+    "paths": {
+        "/laundry/services": {
+            "get": {
+                "tags": [
+                    "Service/Layanan"
+                ],
+                "description": "Daftar layanan yang tersedia",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 1
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 10
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Service/Layanan"
+                ],
+                "description": "Membuat layanan baru",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Service"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                }
+            }
+        },
+        "/laundry/services/{id}": {
+            "get": {
+                "tags": [
+                    "Service/Layanan"
+                ],
+                "description": "Memuat satu layanan terpilih",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Service/Layanan"
+                ],
+                "description": "Memperbaharui layanan",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Service"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Service/Layanan"
+                ],
+                "description": "Menghapus layanan terpilih",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/laundry/durations": {
+            "get": {
+                "tags": [
+                    "Duration/Durasi"
+                ],
+                "description": "Daftar durasi layanan yang tersedia",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 1
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 10
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Duration/Durasi"
+                ],
+                "description": "Membuat durasi layanan baru",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Duration"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                }
+            }
+        },
+        "/laundry/durations/{id}": {
+            "get": {
+                "tags": [
+                    "Duration/Durasi"
+                ],
+                "description": "Memuat satu durasi layanan terpilih",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Duration/Durasi"
+                ],
+                "description": "Memperbaharui durasi layanan",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Duration"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Duration/Durasi"
+                ],
+                "description": "Menghapus durasi layanan terpilih",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/laundry/transactions": {
+            "get": {
+                "tags": [
+                    "Transaction/Transaksi"
+                ],
+                "description": "Daftar transaksi yang telah dilakukan",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 1
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 10
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Transaction/Transaksi"
+                ],
+                "description": "Membuat transaksi baru",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Transaction"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                }
+            }
+        },
+        "/laundry/transactions/{id}": {
+            "get": {
+                "tags": [
+                    "Transaction/Transaksi"
+                ],
+                "description": "Memuat satu transaksi terpilih",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Transaction/Transaksi"
+                ],
+                "description": "Memperbaharui transaksi",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Transaction"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Transaction/Transaksi"
+                ],
+                "description": "Menghapus durasi layanan terpilih",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "Bearer": {
+                "in": "header",
+                "type": "apiKey",
+                "name": "Authorization",
+                "description": "Token for authorization process"
+            }
+        },
+        "schemas": {
+            "Service": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "example": "Kiloan"
+                    },
+                    "price": {
+                        "type": "string",
+                        "example": "10000"
+                    }
+                }
+            },
+            "Duration": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "example": "Express"
+                    },
+                    "cost": {
+                        "type": "integer",
+                        "example": 35,
+                        "description": "Jumlah biaya dalam persen"
+                    },
+                    "duration": {
+                        "type": "string",
+                        "example": "8h",
+                        "description": "Durasi dalam satuan h untuk jam"
+                    }
+                }
+            },
+            "Transaction": {
+                "type": "object",
+                "properties": {
+                    "service_id": {
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "duration_id": {
+                        "type": "integer",
+                        "example": 0
+                    },
+                    "customer_name": {
+                        "type": "string",
+                        "example": "John Doe"
+                    },
+                    "customer_phone": {
+                        "type": "string",
+                        "example": "627393271273"
+                    }
+                }
+            }
+        }
+    }
+}
